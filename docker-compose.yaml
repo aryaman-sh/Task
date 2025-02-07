@@ -10,3 +10,11 @@ services:
         start_period: 0s
     ports:
       - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
