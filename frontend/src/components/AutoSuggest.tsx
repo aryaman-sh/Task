@@ -8,7 +8,7 @@ const AutoSuggestComponent: React.FC = () => {
 
     useEffect(() => {
         const fetchSuggestions = async () => {
-            if (query.length > 3) { // Only search when len > 3
+            if (query.length >= 3) { // Only search when len > 3
                 const response = await getAutoSuggest(query);
                 if (response.error) {
                     setSuggestions(`Error: ${response.error}`);
